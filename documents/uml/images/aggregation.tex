@@ -1,0 +1,30 @@
+\documentclass[crop,tikz]{standalone}
+
+\input{_common}
+
+\begin{document}
+\begin{tikzpicture}
+\node[class] (Company) {
+	\begin{ClassTable}{row{Y-Z}={0em},hline{Y}={solid,0.6pt}}
+		Company\\
+		\\
+		\\
+	\end{ClassTable}
+};
+
+\node[class,below] (Person) at ($(Company.south) - (0, 2)$) {
+	\begin{ClassTable}{row{Y-Z}={0em},hline{Y}={solid,0.6pt}}
+		Person\\
+		\\
+		\\
+	\end{ClassTable}
+};
+
+\draw[aggregation-] (Company) --
+	node[edge label,at start,below right] {0..*}
+	node[edge label,at start,below left] {employer}
+	node[edge label,at end,above right] {1..*}
+	node[edge label,at end,above left] {employees}
+	(Person);
+\end{tikzpicture}
+\end{document}

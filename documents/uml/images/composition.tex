@@ -1,0 +1,30 @@
+\documentclass[crop,tikz]{standalone}
+
+\input{_common}
+
+\begin{document}
+\begin{tikzpicture}
+\node[class] (University) {
+	\begin{ClassTable}{row{Y-Z}={0em},hline{Y}={solid,0.6pt}}
+		University\\
+		\\
+		\\
+	\end{ClassTable}
+};
+
+\node[class,below] (Faculty) at ($(University.south) - (0, 2)$) {
+	\begin{ClassTable}{row{Y-Z}={0em},hline{Y}={solid,0.6pt}}
+		Faculty\\
+		\\
+		\\
+	\end{ClassTable}
+};
+
+\draw[composition-] (University) --
+	node[edge label,at start,below right] {1}
+	node[edge label,at start,below left] {university}
+	node[edge label,at end,above right] {1..*}
+	node[edge label,at end,above left] {faculties}
+	(Faculty);
+\end{tikzpicture}
+\end{document}

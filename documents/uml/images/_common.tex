@@ -1,0 +1,55 @@
+\usepackage{tabularray}
+
+\usetikzlibrary{arrows.meta,calc}
+
+\tikzset{
+	unspecified/.tip={},
+	navigable/.tip={Straight Barb[length=2mm,width=2mm]},
+	unnavigable/.tip={Rays[length=2mm,width=2mm,sep=1mm]Bar[length=0mm,width=0mm,sep=-0.5pt]},
+	aggregation/.tip={Diamond[length=3mm,width=2mm,open]},
+	composition/.tip={Diamond[length=3mm,width=2mm]},
+	note/.style={align=left},
+	class/.style={inner sep=-0.4pt,fill=white},
+	instanceof/.style={
+		-{Straight Barb[length=2mm,width=2mm]},
+		dashed
+	},
+	generalization/.style={
+		-{Triangle[length=3mm,width=3mm,open]}
+	},
+	realization/.style={
+		-{Triangle[length=3mm,width=3mm,open]},
+		dashed
+	},
+	edge label/.style={
+		inner ysep=1mm,
+		inner xsep=2mm,
+		text depth=0.2em,
+		text height=1.6ex
+	}
+}
+
+\NewTblrEnviron{ClassTable}
+\SetTblrInner[ClassTable]{
+	colsep=4pt,
+	rowsep=1pt,
+	row{1}={halign=c,belowsep=2pt,preto={\sffamily\bfseries}},
+	row{2-Z}={halign=l},
+	row{1-Z}={1.1em},
+	hline{1,2,Z}={solid,0.6pt},
+	vline{1,Z}={solid,0.6pt},
+	stretch=-1
+}
+
+\NewTblrEnviron{InterfaceTable}
+\SetTblrInner[InterfaceTable]{
+	colsep=4pt,
+	rowsep=1pt,
+	row{1}={halign=c,belowsep=2pt,preto={\sffamily\small}},
+	row{2}={halign=c,belowsep=2pt,preto={\sffamily\bfseries}},
+	row{2-Z}={halign=l},
+	row{1-Z}={1.1em},
+	hline{1,2,Z}={solid,0.6pt},
+	vline{1,Z}={solid,0.6pt},
+	stretch=-1
+}
