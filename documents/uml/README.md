@@ -10,8 +10,8 @@ The document is current a work in progress.
 
 ### Composition
 
-![UML Diagram showcasing Composition](./images/composition.png)
+![UML Diagram showcasing Composition](images/composition.png)
 
 ### Aggregation
 
-![UML Diagram showcasing Aggregation](./images/aggregation.png)
+![UML Diagram showcasing Aggregation](images/aggregation.png)
