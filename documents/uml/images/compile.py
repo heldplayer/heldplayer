@@ -11,3 +11,8 @@ if __name__ == "__main__":
             subprocess.call(["pdflatex", f])
             # -background white -alpha remove -alpha off
             subprocess.call(["convert", "-background", "white", "-alpha", "remove", "-alpha", "off", "-density", "300", f.with_suffix(".pdf"), f.with_suffix(".png")])
+
+    # Cleanup
+    for f in (pathlib.Path(f) for f in os.listdir()):
+        if f.suffix in [".aux", ".log", ".pdf"]:
+            os.remove(f)
